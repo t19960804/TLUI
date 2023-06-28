@@ -24,7 +24,7 @@ open class TLImageView: UIImageView {
     }
     
     public func addTintColor(_ color: UIColor) {
-        self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = self.image?.withRenderingMode(.alwaysTemplate)
         self.tintColor = color
     }
     
