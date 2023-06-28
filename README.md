@@ -1,7 +1,5 @@
 # TLUI
 
-Easy Way For Building UI
-
 * TLButton
 * TLCollectionView
 * TLImageView
