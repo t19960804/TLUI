@@ -11,6 +11,13 @@ open class TLLabel: UILabel {
         self.numberOfLines = numberOfLines
     }
     
+    public init(attributedStrings: [NSAttributedString], numberOfLines: Int = 1) {
+        super.init(frame: .zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.numberOfLines = numberOfLines
+        setAttributedText(attributedStrings: attributedStrings)
+    }
+    
     public func setAttributedText(attributedStrings: [NSAttributedString]) {
         let content = NSMutableAttributedString()
         for string in attributedStrings {
