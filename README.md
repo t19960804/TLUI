@@ -1,4 +1,4 @@
-![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/logo.jpg)
+![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Banner.png)
 # TLUI
 
 * TLButton
