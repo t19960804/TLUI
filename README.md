@@ -2,14 +2,19 @@
 
 Easy Way For Building UI
 
+* TLButton
+* TLCollectionView
+* TLImageView
+* TLLabel
+* TLTopCornerView
+* TLView
+
 ###### Center In Super View
 ```swift
 
-let sampleView = UIView()
-sampleView.translatesAutoresizingMaskIntoConstraints = false
-sampleView.backgroundColor = .red
-
+let sampleView = TLView(backgroundColor: .red)
 view.addSubview(sampleView)
+
 sampleView.centerInSuperView(size: .init(width: 150, height: 150))
 
 ```
@@ -18,10 +23,7 @@ sampleView.centerInSuperView(size: .init(width: 150, height: 150))
 ###### Add Top / Left Anchor
 ```swift
 
-let sampleView = UIView()
-sampleView.translatesAutoresizingMaskIntoConstraints = false
-sampleView.backgroundColor = .red
-
+let sampleView = TLView(backgroundColor: .red)
 view.addSubview(sampleView)
 
 sampleView.addConstraints(leadingAnchorTuple: (view.leadingAnchor, 50), topAnchorTuple: (view.topAnchor, 50))
@@ -33,12 +35,10 @@ sampleView.addWidthConstraint(equalToConstant: 150)
 ###### Add Same Anchor With Other Views
 ```swift
 
-let sampleView = UIView()
-sampleView.translatesAutoresizingMaskIntoConstraints = false
-sampleView.backgroundColor = .red
-let sampleView2 = UIView()
-sampleView2.translatesAutoresizingMaskIntoConstraints = false
-sampleView2.backgroundColor = .blue
+let sampleView = TLView(backgroundColor: .red)
+view.addSubview(sampleView)
+let sampleView2 = TLView(backgroundColor: .blue)
+view.addSubview(sampleView2)
 
 view.addSubview(sampleView)
 view.addSubview(sampleView2)
