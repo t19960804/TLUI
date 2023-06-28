@@ -1,7 +1,7 @@
 import UIKit
 
 open class TLLabel: UILabel {
-    init(text: String?, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .natural, numberOfLines: Int = 1) {
+    public init(text: String?, textColor: UIColor, font: UIFont, textAlignment: NSTextAlignment = .natural, numberOfLines: Int = 1) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
@@ -11,7 +11,7 @@ open class TLLabel: UILabel {
         self.numberOfLines = numberOfLines
     }
     
-    func setAttributedText(attributedStrings: [NSAttributedString]) {
+    public func setAttributedText(attributedStrings: [NSAttributedString]) {
         let content = NSMutableAttributedString()
         for string in attributedStrings {
             content.append(string)

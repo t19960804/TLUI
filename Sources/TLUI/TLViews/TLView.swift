@@ -2,7 +2,7 @@ import UIKit
 
 open class TLView: UIView {
     
-    init(backgroundColor: UIColor, corner: CGFloat = 0) {
+    public init(backgroundColor: UIColor, corner: CGFloat = 0) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = backgroundColor

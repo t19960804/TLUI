@@ -3,7 +3,7 @@ import UIKit
 open class TLBlurEffectView: UIVisualEffectView {
     private var animator: UIViewPropertyAnimator!
     // radius: 0 - 1, 值越大越模糊
-    init(style: UIBlurEffect.Style, radius: CGFloat) {
+    public init(style: UIBlurEffect.Style, radius: CGFloat) {
         super.init(effect: nil)
         translatesAutoresizingMaskIntoConstraints = false
         animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {

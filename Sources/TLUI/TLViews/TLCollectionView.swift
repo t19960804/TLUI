@@ -1,7 +1,7 @@
 import UIKit
 
 open class TLCollectionView: UICollectionView {
-    init(scrollDirection: UICollectionView.ScrollDirection ,minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, itemSize: CGSize) {
+    public init(scrollDirection: UICollectionView.ScrollDirection ,minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, itemSize: CGSize) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
         // minimumInteritemSpacing, 垂直 > 橫向cell的距離 ; 水平 > 直向cell的距離

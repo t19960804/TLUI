@@ -1,9 +1,9 @@
 import UIKit
 
 open class TLTopCornerView: UIView {
-    var corner: CGFloat = 0.0
+    private var corner: CGFloat = 0.0
 
-    init(backgroundColor: UIColor, corner: CGFloat) {
+    public init(backgroundColor: UIColor, corner: CGFloat) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = backgroundColor

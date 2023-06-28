@@ -1,7 +1,7 @@
 import UIKit
 
 open class TLButton: UIButton {
-    init(text: String, textColor: UIColor, font: UIFont, backgroundColor: UIColor, corner: CGFloat = 0) {
+    public init(text: String, textColor: UIColor, font: UIFont, backgroundColor: UIColor, corner: CGFloat = 0) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setTitle(text, for: .normal)
@@ -11,14 +11,14 @@ open class TLButton: UIButton {
         self.titleLabel?.font = font
     }
     
-    init(backgroundColor: UIColor, corner: CGFloat = 0) {
+    public init(backgroundColor: UIColor, corner: CGFloat = 0) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = backgroundColor
         addCorner(corner)
     }
     
-    func setAttributedTitle(attributedStrings: [NSAttributedString?]) {
+    public func setAttributedTitle(attributedStrings: [NSAttributedString?]) {
         let content = NSMutableAttributedString()
         for string in attributedStrings {
             if let string = string {
