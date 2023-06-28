@@ -13,7 +13,7 @@ view.addSubview(sampleView)
 sampleView.centerInSuperView(size: .init(width: 150, height: 150))
 
 ```
-![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Sample1.png)
+![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Demo1.png)
 
 ###### Add Top / Left Anchor
 ```swift
@@ -29,7 +29,7 @@ sampleView.addHeightConstraint(equalToConstant: 150)
 sampleView.addWidthConstraint(equalToConstant: 150)
 
 ```
-![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Sample2.png)
+![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Demo2.png)
 ###### Add Same Anchor With Other Views
 ```swift
 
@@ -49,4 +49,4 @@ sampleView2.addWidthConstraint(equalTo: sampleView.widthAnchor)
 sampleView2.addHeightConstraint(equalTo: sampleView.heightAnchor)
 
 ```
-![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Sample3.png)
+![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Demo3.png)
