@@ -1,7 +1,7 @@
 import UIKit
 
 extension String {
-    func toAttributedString(color: UIColor, font: UIFont, alignment: NSTextAlignment = .left, underlineColor: UIColor = .clear) -> NSAttributedString {
+    public func toAttributedString(color: UIColor, font: UIFont, alignment: NSTextAlignment = .left, underlineColor: UIColor = .clear) -> NSAttributedString {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = alignment
         var attributes: [NSAttributedString.Key: Any] = [

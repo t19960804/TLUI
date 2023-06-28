@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIImage {
-    func toAttributedString(bounds: CGRect) -> NSAttributedString {
+    public func toAttributedString(bounds: CGRect) -> NSAttributedString {
         let attachment = NSTextAttachment()
         attachment.image = self
         attachment.bounds = bounds

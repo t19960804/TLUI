@@ -1,7 +1,7 @@
 import UIKit
 
 extension CALayer {
-    func addBreatheAnimation(values: [Any], keyTimes: [NSNumber], duration: Float) {
+    public func addBreatheAnimation(values: [Any], keyTimes: [NSNumber], duration: Float) {
         let animation = CAKeyframeAnimation(keyPath: "transform.scale")
         // values > scale的倍率
         // keyTimes > values中每個value對應到的秒數(按比例計算, 範圍在0-1)
