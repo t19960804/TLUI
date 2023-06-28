@@ -1,7 +1,7 @@
 import UIKit
 
 open class TLCollectionView: UICollectionView {
-    public init(scrollDirection: UICollectionView.ScrollDirection ,minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, itemSize: CGSize) {
+    public init(scrollDirection: UICollectionView.ScrollDirection ,minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, cells: [(AnyClass, String)]) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
         // minimumInteritemSpacing, 垂直 > 橫向cell的距離 ; 水平 > 直向cell的距離
@@ -9,13 +9,19 @@ open class TLCollectionView: UICollectionView {
         layout.minimumInteritemSpacing = minimumInteritemSpacing
         layout.minimumLineSpacing = minimumLineSpacing
         layout.sectionInset = sectionInset
-        layout.itemSize = itemSize
         super.init(frame: .zero, collectionViewLayout: layout)
         
         backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
+        regsiterCells(cells)
+    }
+    
+    private func regsiterCells(_ cells: [(class: AnyClass, id: String)]) {
+        for cell in cells {
+            register(cell.class, forCellWithReuseIdentifier: cell.id)
+        }
     }
     
     required public init?(coder: NSCoder) {
