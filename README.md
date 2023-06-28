@@ -36,9 +36,7 @@ sampleView.addWidthConstraint(equalToConstant: 150)
 ```swift
 
 let sampleView = TLView(backgroundColor: .red)
-view.addSubview(sampleView)
 let sampleView2 = TLView(backgroundColor: .blue)
-view.addSubview(sampleView2)
 
 view.addSubview(sampleView)
 view.addSubview(sampleView2)
