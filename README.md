@@ -1,5 +1,7 @@
 ![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Banner_2.png)
 
+[](https://img.shields.io/badge/Swift-5%2B-blue)
+
 ## Components
 
 * TLButton
