@@ -25,5 +25,6 @@ let package = Package(
         .testTarget(
             name: "TLUITests",
             dependencies: ["TLUI"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
