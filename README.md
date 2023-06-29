@@ -1,6 +1,8 @@
 ![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Banner_2.png)
 
-[](https://img.shields.io/badge/Swift-5%2B-blue)
+<a href="https://molly1024.medium.com/" target="_blank">
+      <img src="--https://img.shields.io/badge/Swift-5%2B-blue--" />
+</a>
 
 ## Components
 
