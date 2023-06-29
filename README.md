@@ -1,11 +1,15 @@
 ![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Banner_2.png)
 
+##Components
+
 * TLButton
 * TLCollectionView
 * TLImageView
 * TLLabel
 * TLTopCornerView
 * TLView
+
+##How to use?
 
 ###### Center In Super View
 ```swift
@@ -46,3 +50,8 @@ sampleView2.addHeightConstraint(equalTo: sampleView.heightAnchor)
 
 ```
 ![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Demo3.png)
+
+##Requirements
+
+* iOS 11 +
+* Swift 5 +
