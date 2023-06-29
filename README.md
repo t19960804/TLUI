@@ -1,6 +1,9 @@
 ![](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Banner_2.png)
 
-![License](https://img.shields.io/badge/Swift-5%2B-blue--)
+![](https://img.shields.io/badge/Swift-5%2B-blue)
+![](https://img.shields.io/badge/Platform-iOS-orange)
+![](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-green)
+![](https://img.shields.io/badge/Version-1.0.1-yellow)
 
 ## Components
 
