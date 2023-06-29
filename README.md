@@ -51,6 +51,10 @@ sampleView2.addHeightConstraint(equalTo: sampleView.heightAnchor)
 ```
 ![Demo](https://github.com/t19960804/TLUI/blob/main/Sources/TLUI/Resources/Demo3.png)
 
+## Installation
+
+* Swift Package Manager
+
 ## Requirements
 
 * iOS 11 +
