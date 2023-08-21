@@ -2,7 +2,6 @@ import XCTest
 @testable import TLUI
 
 final class ExtensionUIViewTest: XCTestCase {
-
     func testAddCorner() {
         let view = UIView()
         view.addCorner(10, clipsToBounds: true)
