@@ -1,21 +1,27 @@
 import UIKit
 
 open class TLImageView: UIImageView {
+    private var fromModule: Bool!
     
-    public init(imageName: String, contentMode: ContentMode = .scaleToFill) {
+    public init(imageName: String, contentMode: ContentMode = .scaleToFill, fromModule: Bool = false) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.image = UIImage(named: imageName)
+        self.image = fromModule ? UIImage(named: imageName, in: .module, with: nil) : UIImage(named: imageName)
         self.contentMode = contentMode
+        self.fromModule = fromModule
     }
     
     public func setImageFromAssets(name: String) {
-        self.image = UIImage(named: name)
+        self.image = fromModule ? UIImage(named: name, in: .module, with: nil) : UIImage(named: name)
     }
     
     public func setImageFromBundle(name: String) {
-        for type in ["jpg", "png"] {
-            if let path = Bundle.main.path(forResource: name, ofType: type),
+        var environment: Bundle = .main
+        if fromModule {
+            environment = .module
+        }
+        for type in ["jpg", "png", "jpeg"] {
+            if let path = environment.path(forResource: name, ofType: type),
                let image = UIImage(contentsOfFile: path) {
                 self.image = image
                 return
