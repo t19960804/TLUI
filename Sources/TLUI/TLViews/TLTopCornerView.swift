@@ -10,6 +10,10 @@ open class TLTopCornerView: UIView {
         self.corner = corner
     }
     
+    open func getCorner() -> CGFloat {
+        return corner
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
         roundCorners(corners: [.topLeft, .topRight], radius: corner)
