@@ -3,8 +3,8 @@
 ![](https://img.shields.io/badge/Swift-5%2B-blue)
 ![](https://img.shields.io/badge/Platform-iOS-orange)
 ![](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-green)
-![](https://img.shields.io/badge/Version-1.0.2-yellow)
-![](https://img.shields.io/badge/UnitTest-60%25-yellow)
+![](https://img.shields.io/badge/Version-1.0.3-yellow)
+![](https://img.shields.io/badge/UnitTest-92%25-yellow)
 
 ## Components
 
@@ -63,5 +63,5 @@ sampleView2.addHeightConstraint(equalTo: sampleView.heightAnchor)
 
 ## Requirements
 
-* iOS 11 +
+* iOS 13 +
 * Swift 5 +
