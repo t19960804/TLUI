@@ -26,7 +26,10 @@ let package = Package(
         .testTarget(
             name: "TLUITests",
             dependencies: ["TLUI", "UIKit"],
-            resources: [.process("Resources")]),
+            resources: [.process("Resources")],
+            linkerSettings: [
+                .linkedFramework("UIKit", .when(platforms: [.iOS]))
+            ]),
     ],
     swiftLanguageVersions: [.v5]
 )
