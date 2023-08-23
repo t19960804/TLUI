@@ -13,6 +13,7 @@ let package = Package(
     ],
     dependencies: [
         // package 的程式也可以使用其它 package。若有用到其它 package，可在 dependencies 欄位設定網路上 package 的網址或本機 package 的路經。
+        .target(name: "TLUI", dependencies: ["UIKit", "otherDependencies"]),
     ],
     targets: [
         // package 產生的 module。我們待會寫的程式將編譯成 TLUI Target。
