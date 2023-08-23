@@ -18,7 +18,7 @@ let package = Package(
         // package 產生的 module。我們待會寫的程式將編譯成 TLUI Target。
         .target(
             name: "TLUI",
-            dependencies: [],
+            dependencies: ["UIKit"],
             resources: [.process("Resources")],
             linkerSettings: [
                 .linkedFramework("UIKit", .when(platforms: [.iOS]))
