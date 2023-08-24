@@ -20,6 +20,7 @@ let package = Package(
             name: "TLUI",
             dependencies: [],
             resources: [.process("Resources")],
+            swiftSettings: [.unsafeFlags(["-whole-module-optimization", ""])],
             linkerSettings: [
                 .linkedFramework("UIKit", .when(platforms: [.iOS]))
             ]),
