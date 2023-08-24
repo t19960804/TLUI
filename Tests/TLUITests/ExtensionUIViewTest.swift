@@ -1,5 +1,5 @@
 import XCTest
-@testable import TLUI
+import TLUI
 
 final class ExtensionUIViewTest: XCTestCase {
     func testAddCorner() {
