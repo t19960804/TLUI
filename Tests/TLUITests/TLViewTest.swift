@@ -14,7 +14,6 @@ final class TLViewTest: XCTestCase {
         
         XCTAssertEqual(view.backgroundColor, .green)
         XCTAssertEqual(view.layer.cornerRadius, 0.0)
-        XCTAssertTrue(1==2)
     }
 
 }
