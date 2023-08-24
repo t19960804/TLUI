@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TLUI", // package 的名稱 。
-    // package 預設支援多個平台，我們可透過參數 platforms 限制它支援的系統版本。 [.iOS(.v13)] 表示在 iOS 要 13 以上才能使用 package。值得注意的，沒寫在 [ ] 裡不代表不支援，因此 macOS App 也能使用 package。
+    platforms: [.iOS(.v13)], // package 預設支援多個平台，我們可透過參數 platforms 限制它支援的系統版本。 [.iOS(.v13)] 表示在 iOS 要 13 以上才能使用 package。值得注意的，沒寫在 [ ] 裡不代表不支援，因此 macOS App 也能使用 package。
     products: [ // package 生成的產品。我們主要目的是產生讓 App 使用的 library，所以傳入 .library(name: "TLUI", targets: ["TLUI"])。library 的名稱是 TLUI，它包含的 target 也叫 TLUI。
         .library(
             name: "TLUI",
