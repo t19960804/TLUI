@@ -11,7 +11,7 @@ final class TLViewTest: XCTestCase {
     
     func testInitWithDefaultCorner() {
         let view = TLView(backgroundColor: .green)
-        
+        XCTAssertEqual(1, 2)
         XCTAssertEqual(view.backgroundColor, .green)
         XCTAssertEqual(view.layer.cornerRadius, 0.0)
     }
