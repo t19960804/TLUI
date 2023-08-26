@@ -1,5 +1,5 @@
 import UIKit
-// Test 1
+
 extension CAGradientLayer {
     public enum Direction {
         case Top_Bottom
