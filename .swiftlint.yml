@@ -1,4 +1,17 @@
 disabled_rules:
-  - line_length # 解除function字元限制
-  - identifier_name # 取消強制駝峰式命名
-  - trailing_whitespace # 允許換行時產生的空白
+  - identifier_name #允許非駝峰式的命名
+  - trailing_whitespace #允許換行時產生的空白
+  
+line_length:
+  warning: 160
+  error: 300
+  ignores_function_declarations: true
+file_length:
+  warning: 1000
+  error: 1500
+function_body_length:
+  warning: 100
+  error: 150
+type_body_length:
+  warning: 800
+  error: 1200
