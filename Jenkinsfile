@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    environment {
-        needUpdateVersion = true
+    parameters {
+        booleanParam(name: 'RUN_Deploy', defaultValue: true)
     }
     
     stages {
@@ -19,15 +19,10 @@ pipeline {
                 sh 'xcodebuild -scheme TLUI -destination "platform=iOS Simulator,name=iPhone 14" test'
             }
         }
-        stage('Print Environment Variable') {
-            steps {
-                echo "The value of needUpdateVersion is: ${env.needUpdateVersion}"
-            }
-        }
         stage('Deploy') {
             when {
                 expression {
-                    return env.needUpdateVersion == true
+                    return params.RUN_Deploy
                 }
             }
             steps {
