@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    return currentBuild.resultIsBetterOrEqualTo('SUCCESS') && env.needUpdateVersion == true
+                    return env.needUpdateVersion == true
                 }
             }
             steps {
