@@ -44,6 +44,8 @@ pipeline {
                     git config --global user.name 't19960804'
                     git config --global user.email 't19960804@gmail.com'
                     
+                    perl -i -pe 's/Version-[0-9]+\\.[0-9]+\\.[0-9]+/Version-${newVersion}/g' '${readmePath}'
+                    
                     cd '${projectPath}'
                     git add .
                     git commit -m 'Update Version To ${newVersion}'
