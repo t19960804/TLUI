@@ -22,8 +22,8 @@ pipeline {
         stage('Deploy') {
             when {
                 allOf {
-                    currentBuild.resultIsBetterOrEqualTo('SUCCESS')
-                    params.RUN_Deploy
+                    expression { return currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
+                    expression { return params.RUN_Deploy }
                 }
             }
             steps {
