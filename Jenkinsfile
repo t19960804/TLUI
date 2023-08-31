@@ -2,10 +2,18 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'RUN_Deploy', defaultValue: true)
+        booleanParam(name: 'RUN_Deploy', defaultValue: false)
     }
     
     stages {
+        stage('Clear Workspace') {
+            steps {
+                script {
+                    echo 'Clearing workspace'
+                    deleteDir()
+                }
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building the project'
@@ -38,7 +46,7 @@ pipeline {
                     echo 'Deploying the project'
                     def projectPath = "/Users/t19960804/Desktop/TLUI"
                     def readmePath = "${projectPath}/README.md"
-                    def newVersion = "1.0.6"
+                    def newVersion = "1.0.7"
                     
                     sh """
                     git config --global user.name 't19960804'
