@@ -22,9 +22,8 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    echo "The value of currentBuild is: ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
                     echo "The value of needUpdateVersion is: ${env.needUpdateVersion}"
-                    return currentBuild.resultIsBetterOrEqualTo('SUCCESS') && env.needUpdateVersion == true
+                    return env.needUpdateVersion == true
                 }
             }
             steps {
