@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                // test msg
                 echo 'Testing the project'
                 sh 'xcodebuild -scheme TLUI -destination "platform=iOS Simulator,name=iPhone 14" test'
             }
