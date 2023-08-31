@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        needUpdateVersion = false
+    }
+    
     stages {
         stage('Build') {
             steps {
@@ -16,6 +20,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression {
+                    return currentBuild.resultIsBetterOrEqualTo('SUCCESS') && env.needUpdateVersion == true
+                }
+            }
             steps {
                 echo 'Deploying the project'
             }
