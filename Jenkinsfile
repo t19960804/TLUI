@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'RUN_Deploy', defaultValue: true)
+        booleanParam(name: 'RUN_Deploy', defaultValue: false)
     }
     
     stages {
@@ -23,11 +23,11 @@ pipeline {
             when {
                 allOf {
                     expression {
-                        echo "resultIsBetterOrEqualTo: ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
+                        echo "Info - Build And Test Are Success : ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
                         return currentBuild.resultIsBetterOrEqualTo('SUCCESS')
                     }
                     expression {
-                        echo "RUN_Deploy: ${params.RUN_Deploy}"
+                        echo "Info - RUN_Deploy : ${params.RUN_Deploy}"
                         return params.RUN_Deploy
                     }
                 }
