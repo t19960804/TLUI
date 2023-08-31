@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                // test msg
                 echo 'Building the project'
             }
         }
