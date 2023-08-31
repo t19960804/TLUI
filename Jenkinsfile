@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project'
-                sh 'swift build'
+                sh 'xcodebuild -resolvePackageDependencies'
+                sh 'xcodebuild -packageID TLUI -scheme TLUI build'
             }
         }
         stage('Test') {
