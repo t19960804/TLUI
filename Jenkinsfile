@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building the project'
                 sh 'xcodebuild -resolvePackageDependencies'
-                sh 'xcodebuild -scheme TLUI build'
+                sh 'xcodebuild -scheme TLUI -destination "platform=iOS Simulator,name=iPhone 14" build'
             }
         }
         stage('Test') {
