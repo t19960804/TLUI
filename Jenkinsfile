@@ -22,7 +22,9 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    return params.RUN_Deploy
+                    echo "Info - Build And Test Are Success: ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
+                    echo "Info - RUN_Deploy: ${params.RUN_Deploy}"
+                    return currentBuild.resultIsBetterOrEqualTo('SUCCESS') && params.RUN_Deploy
                 }
             }
             steps {
