@@ -40,24 +40,22 @@ pipeline {
                     def readmePath = "${projectPath}/README.md"
                     def newVersion = "1.0.5"
                     
-                    sh "git config --global user.name 't19960804'"
-                    sh "git config --global user.email 't19960804@gmail.com'"
+                    sh """
+                    git config --global user.name 't19960804'
+                    git config --global user.email 't19960804@gmail.com'
                     
-                    // Edit README.md file
-                    sh "perl -i -pe 's/Version-[0-9]+\\.[0-9]+\\.[0-9]+/Version-${newVersion}/g' '${readmePath}'"
+                    cd '${projectPath}'
+                    git add .
+                    git commit -m 'Update Version To ${newVersion}'
+                    git push -u origin main
                     
-                    sh "cd '${projectPath}'"
-                    sh 'git add .'
-                    sh "git commit -m 'Update Version To ${newVersion}'"
-                    sh 'git push -u origin main'
+                    git config --global core.sshCommand 'ssh -i ~/.ssh/id_ed25519'
                     
-                    // Set Git configuration to use SSH for remote operations
-                    sh "git config --global core.sshCommand 'ssh -i ~/.ssh/id_ed25519'"
+                    latestCommit=\$(git rev-parse HEAD)
                     
-                    def latestCommit = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
-                    
-                    sh "git tag ${newVersion} ${latestCommit}"
-                    sh 'git push -u origin --tags'
+                    git tag ${newVersion} \${latestCommit}
+                    git push -u origin --tags
+                    """
                 }
             }
         }
