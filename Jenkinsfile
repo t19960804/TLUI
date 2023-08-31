@@ -19,10 +19,14 @@ pipeline {
                 sh 'xcodebuild -scheme TLUI -destination "platform=iOS Simulator,name=iPhone 14" test'
             }
         }
+        stage('Print Environment Variable') {
+            steps {
+                echo "The value of needUpdateVersion is: ${env.needUpdateVersion}"
+            }
+        }
         stage('Deploy') {
             when {
                 expression {
-                    echo "The value of needUpdateVersion is: ${env.needUpdateVersion}"
                     return env.needUpdateVersion == true
                 }
             }
