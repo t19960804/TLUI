@@ -34,7 +34,31 @@ pipeline {
                 }
             }
             steps {
-                echo 'Deploying the project'
+                script {
+                    echo 'Deploying the project'
+                    def projectPath = "/Users/t19960804/Desktop/TLUI"
+                    def readmePath = "${projectPath}/README.md"
+                    def newVersion = "1.0.5"
+                    
+                    sh "git config --global user.name 't19960804'"
+                    sh "git config --global user.email 't19960804@gmail.com'"
+                    
+                    // Edit README.md file
+                    sh "perl -i -pe 's/Version-[0-9]+\\.[0-9]+\\.[0-9]+/Version-${newVersion}/g' '${readmePath}'"
+                    
+                    sh "cd '${projectPath}'"
+                    sh 'git add .'
+                    sh "git commit -m 'Update Version To ${newVersion}'"
+                    sh 'git push -u origin main'
+                    
+                    // Set Git configuration to use SSH for remote operations
+                    sh "git config --global core.sshCommand 'ssh -i ~/.ssh/id_ed25519'"
+                    
+                    def latestCommit = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    
+                    sh "git tag ${newVersion} ${latestCommit}"
+                    sh 'git push -u origin --tags'
+                }
             }
         }
     }
