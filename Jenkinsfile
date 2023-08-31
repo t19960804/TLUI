@@ -21,11 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                echo "Info1 - Build And Test Are Success: ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
-                echo "Info1 - RUN_Deploy: ${params.RUN_Deploy}"
                 allOf {
-                    echo "Info2 - Build And Test Are Success: ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
-                    echo "Info2 - RUN_Deploy: ${params.RUN_Deploy}"
                     currentBuild.resultIsBetterOrEqualTo('SUCCESS')
                     params.RUN_Deploy
                 }
