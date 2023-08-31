@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // test msg
                 echo 'Building the project'
+                sh 'swift build'
             }
         }
         stage('Test') {
