@@ -23,7 +23,6 @@ pipeline {
             when {
                 allOf {
                     expression {
-                        // test msg
                         echo "Info - Build And Test Are Success : ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
                         return currentBuild.resultIsBetterOrEqualTo('SUCCESS')
                     }
