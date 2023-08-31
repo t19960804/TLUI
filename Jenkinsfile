@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        needUpdateVersion = false
+        needUpdateVersion = true
     }
     
     stages {
