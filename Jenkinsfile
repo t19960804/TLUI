@@ -6,14 +6,6 @@ pipeline {
     }
     
     stages {
-        stage('Clear Workspace') {
-            steps {
-                script {
-                    echo 'Clearing workspace'
-                    deleteDir()
-                }
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building the project'
