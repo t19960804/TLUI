@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'RUN_Deploy', defaultValue: false)
+        booleanParam(name: 'RUN_Deploy', defaultValue: true)
     }
     
     stages {
@@ -15,7 +15,6 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // test msg
                 echo 'Testing the project'
                 sh 'xcodebuild -scheme TLUI -destination "platform=iOS Simulator,name=iPhone 14" test'
             }
