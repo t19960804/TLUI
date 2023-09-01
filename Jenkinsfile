@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    parameters {
-        extendedChoice(name: 'RUN_Deploy', type: 'PT_SINGLE_SELECT',
-                       defaultGroovyScript: 'return "true"')
-    }
     
     stages {
         stage('Build') {
@@ -23,14 +18,13 @@ pipeline {
         stage('Deploy') {
             when {
                 allOf {
-                    // tes msg
                     expression {
                         echo "Info - Build And Test Are Success : ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
                         return currentBuild.resultIsBetterOrEqualTo('SUCCESS')
                     }
                     expression {
-                        echo "Info - RUN_Deploy : ${params.RUN_Deploy}"
-                        return params.RUN_Deploy == 'true'
+                        // 要升版本再改成true
+                        return true
                     }
                 }
             }
@@ -39,7 +33,7 @@ pipeline {
                     echo 'Deploying the project'
                     def projectPath = "/Users/t19960804/Desktop/TLUI"
                     def readmePath = "${projectPath}/README.md"
-                    def newVersion = "1.1.2"
+                    def newVersion = "1.1.1"
                     
                     sh """
                     git config --global user.name 't19960804'
