@@ -27,7 +27,7 @@ pipeline {
                         // https://stackoverflow.com/questions/71615991/jenkins-pipeline-parameter-being-evaluated-to-previous-value
                         // Warning > 不可以使用parameters來當作flag, 因為設定好的defaultValue只會在下一次的Jenkins建置才會執行, 當前這次的建置反而會讀取上一次的defaultValue
                         // Workaround > 要升版本再改成true
-                        return false
+                        return true
                     }
                 }
             }
