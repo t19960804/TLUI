@@ -29,7 +29,7 @@ pipeline {
                     }
                     expression {
                         echo "Info - RUN_Deploy : ${params.RUN_Deploy}"
-                        return params.RUN_Deploy
+                        return params.RUN_Deploy == 'true'
                     }
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
                     echo 'Deploying the project'
                     def projectPath = "/Users/t19960804/Desktop/TLUI"
                     def readmePath = "${projectPath}/README.md"
-                    def newVersion = "1.1.0"
+                    def newVersion = "1.1.1"
                     
                     sh """
                     git config --global user.name 't19960804'
