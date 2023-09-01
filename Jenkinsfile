@@ -2,7 +2,12 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'RUN_Deploy', defaultValue: true)
+        extendedChoice(name: 'RUN_Deploy', type: 'PT_SINGLE_SELECT',
+                       description: 'Select whether to deploy',
+                       defaultValue: 'true',
+                       visibleItemCount: 2,
+                       choiceType: 'ET_FORMATTED_HTML',
+                       choiceScript: 'return "<option>true</option><option>false</option>"')
     }
     
     stages {
@@ -37,7 +42,7 @@ pipeline {
                     echo 'Deploying the project'
                     def projectPath = "/Users/t19960804/Desktop/TLUI"
                     def readmePath = "${projectPath}/README.md"
-                    def newVersion = "1.0.7"
+                    def newVersion = "1.0.8"
                     
                     sh """
                     git config --global user.name 't19960804'
