@@ -23,6 +23,7 @@ pipeline {
         stage('Deploy') {
             when {
                 allOf {
+                    // tes msg
                     expression {
                         echo "Info - Build And Test Are Success : ${currentBuild.resultIsBetterOrEqualTo('SUCCESS')}"
                         return currentBuild.resultIsBetterOrEqualTo('SUCCESS')
