@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         extendedChoice(name: 'RUN_Deploy', type: 'PT_SINGLE_SELECT',
-                       defaultGroovyScript: 'return "false"')
+                       defaultGroovyScript: 'return "true"')
     }
     
     stages {
@@ -39,7 +39,7 @@ pipeline {
                     echo 'Deploying the project'
                     def projectPath = "/Users/t19960804/Desktop/TLUI"
                     def readmePath = "${projectPath}/README.md"
-                    def newVersion = "1.1.1"
+                    def newVersion = "1.1.2"
                     
                     sh """
                     git config --global user.name 't19960804'
