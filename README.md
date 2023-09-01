@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/Swift-5%2B-blue)
 ![](https://img.shields.io/badge/Platform-iOS-orange)
 ![](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-green)
-![](https://img.shields.io/badge/Version-1.0.8-yellow)
+![](https://img.shields.io/badge/Version-1.0.9-yellow)
 ![](https://img.shields.io/badge/UnitTest-92%25-yellow)
 
 ## Components
