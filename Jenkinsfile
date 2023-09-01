@@ -6,8 +6,9 @@ pipeline {
                        description: 'Select whether to deploy',
                        defaultValue: 'true',
                        visibleItemCount: 2,
-                       choiceType: 'ET_FORMATTED_HTML',
-                       choiceScript: 'return "<option>true</option><option>false</option>"')
+                       groovyScript: '''
+                       return ["true", "false"]
+                       ''')
     }
     
     stages {
